@@ -1,11 +1,5 @@
 {
     "base_url": "https://www.instagram.com",
-    "hashTags": [
-        "page1",
-        "page2",
-        "page3",
-        "page4"
-    ],
     "settings": {
         "run_every_x_hours": 23,
         "like_ratio": 0.75,
@@ -27,7 +21,6 @@
         "user_unfollow_confirm_button": "div.mt3GC > button.aOOlW.-Cab_",
         "not_now_button": ".sqdOP",
         "LIKE_BUTTON": " .fr66n > .wpO6b",
-        "LIKE_BUTTON_CHILD": " div.QBdPU  > span.FY9nT > svg",
         "hash_tags_base_class": ".ySN3v",
         "CANCEL_NOTIFICATIONS_BUTTON": "body > div.RnEpo.Yx5HN > div > div > div > div.mt3GC > button.aOOlW.HoLwm",
         "CLOSE_POPUP": "body > div._2dDPU.CkGkG > div.Igw0E.IwRSH.eGOV_._4EzTm.BI4qX.qJPeX.fm1AK.TxciK.yiMZG > button"

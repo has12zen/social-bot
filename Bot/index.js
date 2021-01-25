@@ -32,7 +32,7 @@ class InstagramBot {
 
 	async visitHashtagUrl() {
 		const shuffle = require('shuffle-array');
-		let hashTags = shuffle(this.config.hashTags);
+		let hashTags = shuffle(JSON.parse(process.env.PAGE_HANDLES));
 		// loop through hashTags
 		for (let tagIndex = 0; tagIndex < hashTags.length; tagIndex++) {
 			console.log('<<<< Currently Exploring >>>> page' + hashTags[tagIndex]);

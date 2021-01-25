@@ -6,7 +6,6 @@ dotenv.config();
 const run = async () => {
 	const bot = new Bot();
 	const startTime = Date();
-
 	await bot.initPuppeter().then(() => console.log('PUPPETEER INITIALIZED'));
 
 	await bot.visitInstagram().then(() => console.log('BROWSING INSTAGRAM'));
