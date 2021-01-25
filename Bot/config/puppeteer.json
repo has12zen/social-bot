@@ -1,10 +1,10 @@
 {
     "base_url": "https://www.instagram.com",
     "hashTags": [
-        "nakshatra_iitbbs",
-        "esummit.iitbbs",
-        "centrepreneurship",
-        "neuro_iitbbs"
+        "page1",
+        "page2",
+        "page3",
+        "page4"
     ],
     "settings": {
         "run_every_x_hours": 23,
