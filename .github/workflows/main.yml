@@ -23,9 +23,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Install dependencies
         run: npm install
-      - name: Start
+      - name: Install XVFB
         run: sudo apt-get install xvfb
-        run: xvfb-run --auto-servernum npm testt
+      - name: start Process
+        run: xvfb-run --auto-servernum npm start
         env:
           CI: false
           USER: ${{secrets.USER_NAME}}
