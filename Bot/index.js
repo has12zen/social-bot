@@ -64,6 +64,7 @@ class InstagramBot {
 			for (let c = 1; c < 4; c++) {
 				//loops through each item in the row
 
+				console.log(page);
 				let br = false;
 				//Try to select post
 				await page
