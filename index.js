@@ -14,7 +14,13 @@ const run = async () => {
 
 	// await bot.unFollowUsers();
 
-	await bot.closeBrowser().then(() => console.log('BROWSER CLOSED'));
+	console.log('begin close');
+	await bot
+		.closeBrowser()
+		.then(() => console.log('BROWSER CLOSED'))
+		.catch((e) => {
+			process.exit();
+		});
 
 	const endTime = Date();
 

@@ -46,6 +46,7 @@ class InstagramBot {
 				this.page
 			);
 		}
+		this.page.close();
 	}
 
 	/**
