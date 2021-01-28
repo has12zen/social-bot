@@ -24,7 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Start
-        run: npm start
+        run: sudo apt-get install xvfb
+        run: xvfb-run --auto-servernum npm testt
         env:
           CI: false
           USER: ${{secrets.USER_NAME}}
