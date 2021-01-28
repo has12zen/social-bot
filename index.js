@@ -19,8 +19,18 @@ const run = async () => {
 	const endTime = Date();
 
 	console.log(`START TIME - ${startTime} / END TIME - ${endTime}`);
+	process.exit();
 };
 
-run().catch((e) => console.log(e.message));
+run().catch((e) => {
+	console.log(e);
+	process.exit(1);
+});
+
+process.on('uncaughtException', (err) => {
+	console.log('UNCAUGHT EXCEPTION! 💥 Shutting down...');
+	console.log(err.name, err.message);
+	process.exit(1);
+});
 //run bot at certain interval we have set in our config file
-setInterval(run, config.settings.run_every_x_hours * 3600000);
+// setInterval(run, config.settings.run_every_x_hours * 3600000);
