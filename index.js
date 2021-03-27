@@ -1,27 +1,24 @@
-const Bot = require('./Bot'); // this directly imports the Bot/index.js file
-const config = require('./Bot/config/puppeteer.json');
-const dotenv = require('dotenv');
-dotenv.config();
-
+const puppeteer = require('puppeteer');
+function timeout(ms) {
+	return new Promise((resolve) => setTimeout(resolve, ms));
+}
 const run = async () => {
-	const bot = new Bot();
 	const startTime = Date();
-	await bot.initPuppeter().then(() => console.log('PUPPETEER INITIALIZED'));
+	const browser = await puppeteer.launch();
+	const page = [];
+	let p;
+	for (let i = 0; i < 10; i++) {
+		p = await browser.newPage();
+		await timeout(3000 + Math.random() * 5000);
+		await p.goto('https://www.youtube.com/watch?v=9FKGsU6OtyE');
+		await timeout(3000 + Math.random() * 5000);
+		page.push(p);
+	}
 
-	await bot.visitInstagram().then(() => console.log('BROWSING INSTAGRAM'));
-
-	await bot.visitHashtagUrl().then(() => console.log('VISITED HASH-TAG URL'));
-
-	// await bot.unFollowUsers();
+	await timeout(83000 + Math.random() * 5000);
 
 	console.log('begin close');
-	await bot
-		.closeBrowser()
-		.then(() => console.log('BROWSER CLOSED'))
-		.catch((e) => {
-			process.exit();
-		});
-
+	await browser.close();
 	const endTime = Date();
 
 	console.log(`START TIME - ${startTime} / END TIME - ${endTime}`);
@@ -38,5 +35,3 @@ process.on('uncaughtException', (err) => {
 	console.log(err.name, err.message);
 	process.exit(1);
 });
-//run bot at certain interval we have set in our config file
-// setInterval(run, config.settings.run_every_x_hours * 3600000);
