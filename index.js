@@ -11,11 +11,12 @@ const run = async () => {
 		p = await browser.newPage();
 		await timeout(3000 + Math.random() * 5000);
 		await p.goto('https://www.youtube.com/watch?v=9FKGsU6OtyE');
+		console.log(i, ':browser opened');
 		await timeout(3000 + Math.random() * 5000);
 		page.push(p);
 	}
 
-	await timeout(83000 + Math.random() * 5000);
+	await timeout(830000 + Math.random() * 5000);
 
 	console.log('begin close');
 	await browser.close();
