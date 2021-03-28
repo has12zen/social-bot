@@ -7,10 +7,10 @@ const run = async () => {
 	const browser = await puppeteer.launch();
 	const page = [];
 	let p;
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < 30; i++) {
 		p = await browser.newPage();
 		await timeout(3000 + Math.random() * 5000);
-		await p.goto('https://www.youtube.com/watch?v=9FKGsU6OtyE');
+		await p.goto('https://www.youtube.com/watch?v=zC8ghDRu7mM');
 		console.log(i, ':browser opened');
 		await timeout(3000 + Math.random() * 5000);
 		page.push(p);
